@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Volkswagen.Dashboard.WebApi.props" />
+</Project>

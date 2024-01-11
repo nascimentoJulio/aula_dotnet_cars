@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Volkswagen.Dashboard.WebApi.props" />
+</Project>

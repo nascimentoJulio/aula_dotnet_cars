@@ -1,0 +1,6 @@
+@Volkswagen.Dashboard.WebApi_HostAddress = http://localhost:5266
+
+GET {{Volkswagen.Dashboard.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
