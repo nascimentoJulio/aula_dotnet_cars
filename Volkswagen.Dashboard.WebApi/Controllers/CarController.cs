@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Any;
+using Volkswagen.Dashboard.Repository;
 using Volkswagen.Dashboard.Services;
 
 namespace Volkswagen.Dashboard.WebApi.Controllers
@@ -17,15 +18,15 @@ namespace Volkswagen.Dashboard.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCar()
+        public async Task<IActionResult> GetCars()
         {
-            return Ok(_carsService.GetCars());
+            return Ok(await _carsService.GetCars());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetCar([FromRoute] int id)
+        public async Task<IActionResult> GetCar([FromRoute] int id)
         {
-            var car = _carsService.GetCarById(id);
+            var car = await _carsService.GetCarById(id);
             if(car is null)
                 return NotFound("Carro não encontrado!");
 
@@ -33,11 +34,34 @@ namespace Volkswagen.Dashboard.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCar([FromBody] CarModel carModel)
+        public async Task<IActionResult> CreateCar([FromBody] CarModel carModel)
         {
-            var id = _carsService.CreateCar(carModel);
+            var id = await _carsService.InsertCar(carModel);
 
             return Created("api/car", id);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCar([FromBody] int id)
+        {
+            await _carsService.DeleteCar(id);
+
+            return Created("api/car", id);
+        }
+
+        /// <summary>
+        /// descrição do método
+        /// </summary>
+        /// <param name="carModel"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCar([FromBody] CarModel carModel, [FromRoute] int id)
+        {
+            carModel.Id = id;
+            var result = await _carsService.InsertCar(carModel);
+
+            return Created("api/car", result);
         }
     }
 }

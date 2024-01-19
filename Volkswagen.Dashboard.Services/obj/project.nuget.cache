@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cNiLHI6SL9BFiuH1WDKk9UXWnbkP5mi9SCXheOrlqWzBX2EKG64n/YBSsznHM/LMNQ7ACWpLLe4tsD7g7wS6oA==",
+  "dgSpecHash": "9JqrVi/NmtZE0LqDS5uDPKbTVcs50BsxXntU9pl8XMxA0dhVLMEvJnWW1LpBVqUJboNQ/k15qBnUONUXrZEsoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\afons\\source\\repos\\Volkswagen.Dashboard.WebApi\\Volkswagen.Dashboard.Services\\Volkswagen.Dashboard.Services.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\afons\\source\\repos\\aula_dotnet_cars\\Volkswagen.Dashboard.Services\\Volkswagen.Dashboard.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\afons\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
+    "C:\\Users\\afons\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\afons\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\afons\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

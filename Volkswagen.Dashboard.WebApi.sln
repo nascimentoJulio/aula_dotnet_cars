@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volkswagen.Dashboard.WebApi", "Volkswagen.Dashboard.WebApi\Volkswagen.Dashboard.WebApi.csproj", "{224A39C8-2277-4360-A17E-4D48C4433397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volkswagen.Dashboard.WebApi", "Volkswagen.Dashboard.WebApi\Volkswagen.Dashboard.WebApi.csproj", "{224A39C8-2277-4360-A17E-4D48C4433397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volkswagen.Dashboard.Services", "Volkswagen.Dashboard.Services\Volkswagen.Dashboard.Services.csproj", "{95889023-F18F-4DC2-94BD-8570E912B278}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volkswagen.Dashboard.Services", "Volkswagen.Dashboard.Services\Volkswagen.Dashboard.Services.csproj", "{95889023-F18F-4DC2-94BD-8570E912B278}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volkswagen.Dashboard.Repository", "Volkswagen.Dashboard.Repository\Volkswagen.Dashboard.Repository.csproj", "{91125E63-DD32-45F4-BFD3-D66C49704890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volkswagen.Dashboard.Tests", "Volkswagen.Dashboard.Tests\Volkswagen.Dashboard.Tests.csproj", "{D10634DC-54C7-4441-8C5F-7A3BD9BDF71A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{95889023-F18F-4DC2-94BD-8570E912B278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95889023-F18F-4DC2-94BD-8570E912B278}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95889023-F18F-4DC2-94BD-8570E912B278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91125E63-DD32-45F4-BFD3-D66C49704890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91125E63-DD32-45F4-BFD3-D66C49704890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91125E63-DD32-45F4-BFD3-D66C49704890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91125E63-DD32-45F4-BFD3-D66C49704890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10634DC-54C7-4441-8C5F-7A3BD9BDF71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10634DC-54C7-4441-8C5F-7A3BD9BDF71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10634DC-54C7-4441-8C5F-7A3BD9BDF71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10634DC-54C7-4441-8C5F-7A3BD9BDF71A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
