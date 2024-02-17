@@ -71,3 +71,12 @@ C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Deb
 C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Npgsql.dll
 C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Volkswagen.Dashboard.Repository.dll
 C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Volkswagen.Dashboard.Repository.pdb
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\afons\source\repos\aula_dotnet_cars\Volkswagen.Dashboard.WebApi\bin\Debug\net8.0\System.Security.Permissions.dll

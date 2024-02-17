@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Volkswagen.Dashboard.Repository\Volkswagen.Dashboard.Repository.csproj" />
   </ItemGroup>
 
