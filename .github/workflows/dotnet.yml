@@ -72,8 +72,19 @@ jobs:
       run: java --version
 
     - name: Analyze with SonarCloud
-      run: dotnet sonarscanner begin /o:"nascimentojulio-1" /k:"nascimentoJulio_aula_dotnet_cars" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet build --configuration Release && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      id: sonar_analysis
+      run: |
+        dotnet sonarscanner begin /k:"your_project_key" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        dotnet build --configuration Release
+        dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
+    - name: Check SonarCloud status
+      run: echo "::set-output name=sonar_status::$(grep 'ERROR: ' ${{ steps.sonar_analysis.stdout }} || echo 'SUCCESS')"
+
+    - name: Fail pipeline on SonarCloud error
+      if: steps.sonar_analysis.outputs.sonar_status == 'ERROR'
+      run: exit 1
+      
   deploy:
     name: Deploy
     runs-on: ubuntu-latest  
