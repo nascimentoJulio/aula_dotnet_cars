@@ -20,7 +20,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x' # altere para a versão do .NET que está utilizando
+        dotnet-version: '8.0.x' # altere para a versão do .NET que está utilizando
 
     - name: Restore Dependencies
       run: dotnet restore
@@ -39,7 +39,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x' # altere para a versão do .NET que está utilizando
+        dotnet-version: '8.0.x' # altere para a versão do .NET que está utilizando
 
     - name: Restore Dependencies
       run: dotnet restore
@@ -62,4 +62,4 @@ jobs:
       run: dotnet restore
 
     - name: Analyze with SonarCloud
-      run: dotnet sonarscanner begin /k:"nascimentoJulio_aula_dotnet_cars" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet build --configuration Release && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      run: dotnet sonarscanner begin /o:"nascimentojulio-1" /k:"nascimentoJulio_aula_dotnet_cars" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet build --configuration Release && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
