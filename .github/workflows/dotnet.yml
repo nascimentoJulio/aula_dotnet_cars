@@ -66,10 +66,6 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
-    
-    - name: Set JAVA_HOME
-      run: |
-        echo "##[set-env name=JAVA_HOME]$(dirname $(dirname $(readlink -f $(which java))))"
 
     - name: Show Java version
       run: java --version
