@@ -66,6 +66,13 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
+    
+    - name: Set JAVA_HOME
+      run: |
+        echo "##[set-env name=JAVA_HOME]$(dirname $(dirname $(readlink -f $(which java))))"
+
+    - name: Show Java version
+      run: java --version
 
     - name: Analyze with SonarCloud
       run: dotnet sonarscanner begin /o:"nascimentojulio-1" /k:"nascimentoJulio_aula_dotnet_cars" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet build --configuration Release && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
