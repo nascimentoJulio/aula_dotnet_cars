@@ -1,37 +1,65 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
+        dotnet-version: '6.0.x' # altere para a versão do .NET que está utilizando
+
+    - name: Restore Dependencies
       run: dotnet restore
+
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
+      run: dotnet build --configuration Release
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x' # altere para a versão do .NET que está utilizando
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Run Tests
       run: dotnet test --no-build --verbosity normal
 
-  sonar:
-  
+  code_quality:
+    name: Code Quality Check
     runs-on: ubuntu-latest
-    
+
     steps:
-    -  uses: actions/checkout@v3
-    -  run: echo Start Sonar
-    -  uses: SonarSource/sonarqube-scan-action@v2.0.1
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install .NET global tool - dotnet-sonarscanner
+      run: dotnet tool install --global dotnet-sonarscanner --version 6.2.0
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Analyze with SonarCloud
+      run: dotnet sonarscanner begin /k:"nascimentoJulio_aula_dotnet_cars" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet build --configuration Release && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
