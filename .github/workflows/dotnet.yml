@@ -79,7 +79,9 @@ jobs:
         dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
     - name: Check SonarCloud status
-      run: echo "::set-output name=sonar_status::$(grep 'ERROR: ' ${{ steps.sonar_analysis.stdout }} || echo 'SUCCESS')"
+      run: |
+        status=$(grep 'ERROR: ' ${{ steps.sonar_analysis.stdout }} || echo 'SUCCESS')
+        echo "::set-output name=sonar_status::$status"
 
     - name: Fail pipeline on SonarCloud error
       if: steps.sonar_analysis.outputs.sonar_status == 'ERROR'
